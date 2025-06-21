@@ -4,6 +4,22 @@ ThreatMail-Simulator is a Python-based toolkit for simulating and automating the
 
 ---
 
+## Preview
+
+Below are example screenshots of ThreatMail-Simulator in action:
+
+<p align="center">
+  <img src="images/first.png" alt="Preview 1" width="700"/>
+  <br>
+  <img src="images/second.png" alt="Preview 2" width="700"/>
+  <br>
+  <img src="images/third.png" alt="Preview 3" width="700"/>
+  <br>
+  <img src="images/last.png" alt="Preview 4" width="700"/>
+</p>
+
+---
+
 ## Table of Contents
 
 - [Features](#features)

@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import subprocess
+import sys
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
+
+def get_python():
+    """Return the current Python executable."""
+    return sys.executable
+
+def launch_flask():
+    """Launch the Email Template Generator Flask app."""
+    script_path = os.path.join(SCRIPTS_DIR, "emailgen.py")
+    if not os.path.exists(script_path):
+        print("[ERROR] 'emailgen.py' not found in scripts/.")
+        return
+    print("\n[INFO] Launching Email Template Generator (Flask web app)...\n")
+    subprocess.run([get_python(), script_path])
+
+def launch_sender():
+    """Launch the Email Sender CLI."""
+    script_path = os.path.join(SCRIPTS_DIR, "main.py")
+    if not os.path.exists(script_path):
+        print("[ERROR] 'main.py' not found in scripts/.")
+        return
+    print("\n[INFO] Launching Email Sender CLI...\n")
+    subprocess.run([get_python(), script_path])
+
+def main():
+    while True:
+        print("\n=== ThreatMail Simulator ===")
+        print("1. Generate Email (Web UI)")
+        print("2. Send the Generated Email (CLI)")
+        print("3. Exit")
+        choice = input("Choose an option [1-3]: ").strip()
+        if choice == "1":
+            launch_flask()
+        elif choice == "2":
+            launch_sender()
+        elif choice == "3":
+            print("Exiting ThreatMail Simulator. Goodbye!")
+            break
+        else:
+            print("Invalid option. Please choose 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
